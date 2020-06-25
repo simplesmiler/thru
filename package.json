@@ -1,0 +1,27 @@
+{
+  "name": "@simplesmiler/thru",
+  "version": "1.0.0",
+  "description": "Type-safe operator for chaining",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["lib/**/*"],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "test": "ts-node node_modules/tape/bin/tape test/**/*.test.ts"
+  },
+  "keywords": ["chaining", "typescript", "types", "typed"],
+  "author": "Denis Karabaza <denis.karabaza@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/lodash": "^4.14.157",
+    "@types/tape": "^4.13.0",
+    "lodash": "^4.17.15",
+    "prettier": "^2.0.5",
+    "tape": "^5.0.1",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.5"
+  },
+  "dependencies": {
+    "@types/node": "*"
+  }
+}
