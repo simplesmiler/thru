@@ -1,16 +1,18 @@
 import test from 'tape';
-import { thru, tap } from '../lib';
+import { thru, tap } from '../src';
 import { flatten } from 'lodash/fp';
 
 test('thru iteration', function (t) {
   t.plan(2);
 
   const result1 = [1, 2, 3]
-    .map(x => [x, x * 2]) // @NOTE: Native array chaining
+    .map((x) => [x, x * 2]) // @NOTE: Native array chaining
     [thru](flatten) // @NOTE: Then with a library function
-    [thru](list => list.slice().sort((a, b) => a - b)) // @NOTE: And back to a native operation on the whole list
+    [thru]((list) => list.slice().sort((a, b) => a - b)); // @NOTE: And back to a native operation on the whole list
 
-  const result2 = (flatten([1, 2, 3].map(x => [x, x * 2]))).slice().sort((a, b) => a - b);
+  const result2 = flatten([1, 2, 3].map((x) => [x, x * 2]))
+    .slice()
+    .sort((a, b) => a - b);
 
   t.deepEqual(result1, [1, 2, 2, 3, 4, 6]);
   t.deepEqual(result1, result2);
@@ -31,10 +33,7 @@ test('thru string', function (t) {
     return str + '!';
   }
 
-  const result1 = 'hello'
-    [thru](doubleSay)
-    [thru](capitalize)
-    [thru](exclaim);
+  const result1 = 'hello'[thru](doubleSay)[thru](capitalize)[thru](exclaim);
 
   const result2 = exclaim(capitalize(doubleSay('hello')));
 
@@ -48,10 +47,13 @@ test('tap', function (t) {
   const log: number[][] = [];
 
   const result = [1, 2, 3]
-    [tap](list => log.push(list))
-    .map(x => x * 2)
-    [tap](list => log.push(list));
+    [tap]((list) => log.push(list))
+    .map((x) => x * 2)
+    [tap]((list) => log.push(list));
 
   t.deepEqual(result, [2, 4, 6]);
-  t.deepEqual(log, [[1, 2, 3], [2, 4, 6]]);
+  t.deepEqual(log, [
+    [1, 2, 3],
+    [2, 4, 6],
+  ]);
 });

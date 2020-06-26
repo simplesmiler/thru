@@ -12,6 +12,13 @@
   "keywords": ["chaining", "typescript", "types", "typed"],
   "author": "Denis Karabaza <denis.karabaza@gmail.com>",
   "license": "ISC",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/simplesmiler/thru.git"
+  },
+  "bugs": {
+    "url": "https://github.com/simplesmiler/thru/issues"
+  },
   "devDependencies": {
     "@types/lodash": "^4.14.157",
     "@types/tape": "^4.13.0",

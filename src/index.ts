@@ -1,4 +1,4 @@
-// @DOC: Thru is a type-safe operator for lodash-style chaining without wrappers
+// @DOC: Thru is a type-safe operator for lodash-style chaining without wrappers.
 //       It does part of the job that proposed bind and pipeline operators do,
 //       but does not require extension of the language, albeit at the cost of slightly longer code.
 //       Inspired by:
@@ -9,7 +9,7 @@
 //         - Discussion over at https://esdiscuss.org/topic/array-prototype-tap
 //       Benefits:
 //         - Allows function calls to follow the data flow instead of being nested
-//         - Does not require pre-chaining wrapping and post-chaining unwrapping (as opposed to _.chain + _.value)
+//         - Does not require pre-chain wrapping and post-chain unwrapping (as opposed to _.chain + _.value)
 //         - Does not require explicit-er types than usual (as opposed to _.flow)
 //         - Promotes code minification due to tree shaking and name mangling
 //       Limitations:
