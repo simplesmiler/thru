@@ -1,20 +1,27 @@
 {
   "name": "@simplesmiler/thru",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Type-safe operator for chaining",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "files": ["lib/**/*"],
+  "files": [
+    "lib/**/*"
+  ],
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "test": "ts-node node_modules/tape/bin/tape test/**/*.test.ts"
   },
-  "keywords": ["chaining", "typescript", "types", "typed"],
+  "keywords": [
+    "chaining",
+    "typescript",
+    "types",
+    "typed"
+  ],
   "author": "Denis Karabaza <denis.karabaza@gmail.com>",
   "license": "ISC",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/simplesmiler/thru.git"
+    "type": "git",
+    "url": "https://github.com/simplesmiler/thru.git"
   },
   "bugs": {
     "url": "https://github.com/simplesmiler/thru/issues"
